@@ -8,9 +8,9 @@
 
 <script setup lang="ts">
   defineEmits(['close'])
-  </script>
+</script>
 
-  <style scoped>
+<style scoped>
   .overlay {
     position: fixed;
     inset: 0;

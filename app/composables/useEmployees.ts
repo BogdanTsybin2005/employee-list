@@ -4,7 +4,7 @@ const STORAGE_KEY = 'employees'
 
 export function useEmployees() {
   const employees = ref<Employee[]>([])
-
+  
   const load = () => {
     const data = localStorage.getItem(STORAGE_KEY)
     employees.value = data ? JSON.parse(data) : []
@@ -27,11 +27,17 @@ export function useEmployees() {
     }
   }
 
+  const removeEmployee = (id: string) => {
+    employees.value = employees.value.filter(e => e.id !== id)
+    save()
+  }
+
   onMounted(load)
 
   return {
     employees,
     addEmployee,
     updateEmployee,
+    removeEmployee,
   }
 }

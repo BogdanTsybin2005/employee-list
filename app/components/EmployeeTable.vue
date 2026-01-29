@@ -17,8 +17,11 @@
                 <td>{{ emp.age }}</td>
                 <td>{{ emp.experience }}</td>
                 <td>{{ emp.address }}</td>
-                <td>
-                <button @click="$emit('edit', emp)">Редактировать</button>
+                <td class="actions">
+                    <button @click="$emit('edit', emp)">Редактировать</button>
+                    <button class="danger" @click="$emit('delete', emp.id)">
+                        Удалить
+                    </button>
                 </td>
             </tr>
         </tbody>
@@ -32,3 +35,45 @@
         employees: Employee[]
     }>()
 </script>
+
+<style scoped>
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background: #f7f7f7;
+    }
+
+    .actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    @media (max-width: 700px) {
+        .table thead {
+            display: none;
+        }
+
+        .table tr {
+            display: block;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .table td {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>

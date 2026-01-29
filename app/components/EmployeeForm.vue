@@ -30,3 +30,16 @@
 
     const submit = () => emit('save', { ...form })
 </script>
+
+<style scoped>
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    input {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+</style>
