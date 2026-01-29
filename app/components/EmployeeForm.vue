@@ -19,12 +19,12 @@
 
     const emit = defineEmits(['save'])
 
-    const form = reactive<Employee>({
+    const form = reactive({
         id: props.employee?.id ?? uuid(),
         firstName: props.employee?.firstName ?? '',
         lastName: props.employee?.lastName ?? '',
-        age: props.employee?.age ?? 0,
-        experience: props.employee?.experience ?? 0,
+        age: props.employee?.age ?? null,
+        experience: props.employee?.experience ?? null,
         address: props.employee?.address ?? '',
     })
 
