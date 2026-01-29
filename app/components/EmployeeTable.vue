@@ -37,55 +37,55 @@
 </template>
 
 <script setup lang="ts">
-import type { Employee } from '~/models/employee'
+  import type { Employee } from '~/models/employee'
 
-// Получаем список сотрудников из родительского компонента
-defineProps<{
-  employees: Employee[]
-}>()
-</script>
+  // Получаем список сотрудников из родительского компонента
+  defineProps<{
+    employees: Employee[]
+  }>()
+  </script>
 
-<style scoped>
-/* Базовые стили таблицы */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
-
-th {
-  background: #f7f7f7;
-}
-
-/* Контейнер кнопок */
-.actions {
-  display: flex;
-  gap: 8px;
-}
-
-/* Адаптивное отображение для мобильных устройств */
-@media (max-width: 700px) {
-  .table thead {
-    display: none;
+  <style scoped>
+  /* Базовые стили таблицы */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
   }
 
-  .table tr {
-    display: block;
-    margin-bottom: 16px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 8px;
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
   }
 
-  .table td {
+  th {
+    background: #f7f7f7;
+  }
+
+  /* Контейнер кнопок */
+  .actions {
     display: flex;
-    justify-content: space-between;
+    gap: 8px;
   }
-}
+
+  /* Адаптивное отображение для мобильных устройств */
+  @media (max-width: 700px) {
+    .table thead {
+      display: none;
+    }
+
+    .table tr {
+      display: block;
+      margin-bottom: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 8px;
+    }
+
+    .table td {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 </style>
